@@ -61,7 +61,7 @@
                                         {{ __('Logout') }}
                                     </a>
 
-                                    @can('manage-users')
+                                    @can('viewAny', \App\Models\User::class)
                                     <a class="dropdown-item" href="{{ route('admin.users.index') }}">
                                         User Management
                                     </a>

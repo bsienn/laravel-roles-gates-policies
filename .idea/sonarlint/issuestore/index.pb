@@ -41,3 +41,5 @@ U
 %database/seeders/UsersTableSeeder.php,2\7\2772f3d7cf5d92e076844d0740f629a6e905056d
 ]
 -app/Http/Controllers/Auth/LoginController.php,d\2\d2f6ed6918131d406f7abde65d228bce0ec7f88c
+K
+app/Policies/UserPolicy.php,7\2\72a6f8426b50f2d6d3c0bdc2da818be7479c8989

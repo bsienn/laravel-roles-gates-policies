@@ -13,6 +13,8 @@ class UsersController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+
+        $this->authorizeResource(User::class, 'user');
     }
 
     /**
@@ -35,9 +37,9 @@ class UsersController extends Controller
      */
     public function edit(User $user)
     {
-        if (Gate::denies('edit-users')) {
-            return redirect(route('admin.users.index'));
-        }
+        // if (Gate::denies('edit-users')) {
+        //     return redirect(route('admin.users.index'));
+        // }
 
         $roles = Role::all();
 
@@ -73,9 +75,9 @@ class UsersController extends Controller
      */
     public function destroy(User $user)
     {
-        if (Gate::denies('delete-users')) {
-            return redirect()->route('admin.users.index');
-        }
+        // if (Gate::denies('delete-users')) {
+        //     return redirect()->route('admin.users.index');
+        // }
 
         $user->roles()->detach();
         $user->delete();

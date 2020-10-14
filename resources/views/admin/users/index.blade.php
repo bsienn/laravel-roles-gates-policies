@@ -27,11 +27,11 @@
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->roles->pluck('name')->join(', ') }}</td>
                                     <td>
-                                        @can('edit-users')
-                                        <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-primary float-left">Edit</a>
+                                        @can('update', $user)
+                                        <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-primary float-left mr-2">Edit</a>
                                         @endcan
 
-                                        @can('delete-users')
+                                        @can('delete', $user)
                                         <form action="{{ route('admin.users.destroy', $user) }}" method="POST" class="float-left">
                                             @csrf
                                             @method('DELETE')
